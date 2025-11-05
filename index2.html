@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Index 2 - Single Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .flip-card-front {
+      background-color: #4e73df;
+      color: white;
+    }
+    .flip-card-back {
+      background-color: #1cc88a;
+      color: white;
+      transform: rotateY(180deg);
+    }
+    h2 {
+      margin: 0;
+      padding: 10px;
+      background: #FF2323;
+      color: #FFFFFF;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .flip-card-back img {
+      width: 80%;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h2>SINI TOMBOL</h2>
+      </div>
+      <div class="flip-card-back">
+        <img src="fototangan.jpg" alt="Foto Tangan">
+      </div>
+    </div>
+  </div>  <br>
+  <a href="index.html" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#4e73df;color:#fff;padding:10px 20px;border-radius:5px;text-decoration:none;">Memanggil Hantu</a>
+</body>
+</html>

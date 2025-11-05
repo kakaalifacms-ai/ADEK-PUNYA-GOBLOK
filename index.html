@@ -1,0 +1,137 @@
+<!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Foto Bulat + Nama + Card</title>
+  <style>
+    :root{
+      --bg:#f3f4f6;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --muted:#6b7280;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;display:flex;min-height:100vh;align-items:center;justify-content:center;background:var(--bg);margin:0;padding:24px}.card{
+  width:320px;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:0 8px 24px rgba(15,23,42,0.08);
+  padding:20px;
+  text-align:center;
+}
+
+.name{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:14px;
+  color:#0f172a;
+}
+
+/* Container foto bulat */
+.avatar-wrap{
+  display:inline-block;
+  width:120px;
+  height:120px;
+  border-radius:9999px;
+  overflow:hidden;
+  border:6px solid rgba(37,99,235,0.08);
+  box-shadow:0 6px 18px rgba(2,6,23,0.06);
+  background:linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.01));
+  margin-bottom:14px;
+  transition:transform .18s ease;
+}
+.avatar-wrap:active{transform:scale(.98)}
+
+.avatar{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.title{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 18px;
+  font-size:15px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,0.07);
+  background:linear-gradient(180deg,white,#f8fafc);
+  cursor:pointer;
+  transition:all .18s ease;
+  user-select:none;
+}
+.btn:active{transform:translateY(1px)}
+
+.btn--primary{
+  background:var(--accent);
+  color:white;
+  border:0;
+  box-shadow:0 6px 18px rgba(37,99,235,0.18);
+}
+
+/* state following */
+.btn.following{
+  background:transparent;
+  color:var(--accent);
+  border:1px dashed rgba(37,99,235,0.24);
+  box-shadow:none;
+}
+
+/* small helper */
+.meta{
+  margin-top:12px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+  </style>
+</head>
+<body>
+  <main class="card" role="region" aria-label="Kartu profil">
+    <!-- Nama di atas foto bulat -->
+    <div class="name" id="displayName">Kevan lucu wajah Kayu</div><!-- Foto bulat -->
+<button class="avatar-wrap" id="avatarBtn" aria-label="Lihat profil">
+  <img class="avatar" src="foto.jpg" alt="Foto profil" />
+</button>
+
+<div class="title">kevan muka nya kayu , kevan adalah d0vgo</div>
+
+<!-- Tombol di bawah foto bulat -->
+<div>
+  <a id="followBtn" class="btn btn--primary" href="index2.html">SINI TOMBOL</a>
+</div>
+
+<div class="meta">Kevan suka gangguin terus,marah,suka pukul dengan kaki</div>
+
+  </main>  <script>
+    // Interaksi tombol: toggle follow
+    const followBtn = document.getElementById('followBtn');
+    const avatarBtn = document.getElementById('avatarBtn');
+    const displayName = document.getElementById('displayName');
+
+    // Event listener dihapus, pakai tag <a> langsung untuk navigasi
+      followBtn.textContent = following ? 'Mengikuti' : 'Ikuti';
+      followBtn.setAttribute('aria-pressed', following ? 'true' : 'false');
+    });
+
+    // Contoh aksi saat menekan foto: tampilkan modal ringan (alert sederhana)
+    avatarBtn.addEventListener('click', () => {
+      // di sini bisa diganti jadi modal, lightbox, atau navigasi
+      alert(displayName.textContent + "\nLihat detail profil (contoh).\nTekan tombol 'Ikuti' untuk mengganti status.");
+    });
+
+    // Data default dihapus, gunakan foto.jpg dan teks statis bawaan
+    document.querySelector('.title').textContent = data.job;
+    document.querySelector('.avatar').src = data.photo;
+
+  </script></body>
+</html>
